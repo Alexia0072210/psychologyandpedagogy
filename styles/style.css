@@ -1,0 +1,609 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("../fonts/Roboto.ttf");
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("../fonts/Robotobold.ttf");
+    font-weight: bold;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+}
+
+.header {
+    border-bottom: 1px solid #E5E5E5;
+    padding: 25px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    vertical-align: bottom;
+    width: 100px;
+}
+
+.menu {
+    margin-left: 244px;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+}
+
+.menu-item {
+    margin-right: 115px;
+}
+
+.menu-item a {
+    font-size: 15px;
+    color: #030305;
+    text-decoration: none;
+}
+
+.menu-item a:hover {
+    border-bottom: 2px solid black;
+}
+
+.main {
+    background-image: url("../images/background.jpg");
+    background-position: top;
+    background-size: cover;
+    padding: 100px 0 154px 0;
+}
+
+#backgroundVigoranie {
+    background-image: url("../images/background1.png");
+}
+
+#backgroundTests {
+    background-image: url("../images/background2.jpg");
+}
+
+#backgroundStress {
+    background-image: url("../images/background3.png");
+}
+
+#backgroundNaychka {
+    background-image: url("../images/background4.jpg");
+}
+
+#backgroundOsobennostidetey {
+    background-image: url("../images/background5.png");
+}
+
+#backgroundSkills {
+    background-image: url("../images/background6.jpg");
+}
+
+#backgroundCommunication {
+    background-image: url("../images/background7.jpg");
+}
+
+#backgroundVideo {
+    background-image: url("../images/background8.jpg");
+}
+
+#backgroundPodcasts {
+    background-image: url("../images/background9.jpg");
+}
+
+.main-info {
+    max-width: 855px;
+    padding-left: 20px;
+}
+
+.main-title {
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 110%;
+    color: #030305;
+    margin-bottom: 40px;
+}
+
+.main-text {
+    font-size: 25px;
+    line-height: 130%;
+    color: #06060a;
+    margin-bottom: 40px;
+    max-width: 502px;
+}
+
+.main-action {
+
+}
+
+/* скрываем чекбокс */
+#menu__toggle {
+    opacity: 0;
+}
+
+/* стилизуем кнопку */
+.menu__btn {
+    display: flex; /* используем flex для центрирования содержимого */
+    align-items: center; /* центрируем содержимое кнопки */
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* добавляем "гамбургер" */
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #616161;
+}
+
+.menu__btn > span::before {
+    content: '';
+    top: -8px;
+}
+
+.menu__btn > span::after {
+    content: '';
+    top: 8px;
+}
+
+/* контейнер меню */
+.menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    background-color: #ECEFF1;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+}
+
+/* элементы меню */
+.menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.menu__item:hover {
+    background-color: #CFD8DC;
+}
+
+#menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+}
+
+#menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+}
+
+#menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+#menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    left: 0;
+}
+
+.button {
+    padding: 20px;
+    width: 334px;
+    height: 64px;
+    background: #030305;
+    border: 0;
+    box-sizing: border-box;
+    text-align: center;
+
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    transition: background-color .5s;
+}
+
+.button:hover {
+    cursor: pointer;
+    background: #575757;
+}
+
+.lesson {
+    padding: 100px;
+}
+
+.sub-title {
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 70px;
+    color: #030305;
+}
+
+.lesson-items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lesson-item {
+    max-width: 384px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.lesson-item-image img {
+    vertical-align: bottom;
+    transition: all .3s;
+    width: 370px;
+    height: 250px;
+}
+
+.lesson-item-image:hover img {
+    transform: scale(1.05);
+}
+
+.lesson-item-title {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    color: #030305;
+    padding: 15px 0 17px 0;
+}
+
+.lesson-item-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lesson-item-point {
+    width: 110px;
+    height: 92px;
+    margin: 7px;
+}
+
+.lesson-item-point img {
+    width: 55px;
+    margin-bottom: 11px;
+}
+
+.lesson-item-action {
+    margin-top: 13px;
+}
+
+.lesson-item-action .button {
+    width: 384px;
+    padding: 15px;
+    height: 54px;
+}
+
+.lesson-item-point > div:nth-child(2) {
+    font-weight: bold;
+}
+
+.price {
+    overflow: hidden;
+}
+
+.price .container {
+    position: relative;
+    padding-bottom: 121px;
+}
+
+.price .sub-title {
+    margin-bottom: 20px;
+}
+
+.price-text {
+    font-size: 25px;
+    line-height: 130%;
+    color: black;
+    margin-bottom: 60px;
+}
+
+.price-form {
+    max-width: 344px;
+}
+
+
+.price-input {
+    padding: 22px 18px;
+    width: 344px;
+    height: 65px;
+    background: #FFFFFF;
+    border: 1px solid #5D5D5F;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #000000;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+.price-input::placeholder {
+    color: #5D5D5F;
+}
+
+.price .button {
+    width: 100%;
+}
+
+.price-image {
+    position: absolute;
+    bottom: 0;
+    left: 401px;
+}
+
+.footer {
+    border-top: 1px solid #E5E5E5;
+    padding: 25px 0;
+}
+
+.footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rights {
+    font-size: 15px;
+    text-align: right;
+    color: #030305;
+}
+
+.InfoTest {
+    display: grid;
+    align-items: center;
+}
+
+.InfoTests {
+    display: flex;
+    text-align: center;
+    margin: 40px;
+    padding: 10px;
+    background-color: rgba(255,135,249,0.15);
+    border-radius: 15px;
+}
+
+.InfoTests-image {
+    transition: all .3s;
+    padding: 20px;
+    width: auto;
+    height: auto;
+}
+
+.InfoTests-image img {
+    width: 350px;
+    height: 100%;
+    max-height: 250px;
+    border-radius: 15px;
+}
+
+.InfoTests-info {
+    width: 100%;
+    align-items: center;
+}
+
+.InfoStress {
+    margin: 40px;
+    width: 60%;
+    font-size: 25px;
+    color: #5D5D5F;
+    line-height: 150%;
+}
+
+.Stress {
+    display: flex;
+}
+
+.podchrk {
+    font-weight: bold;
+    font-size: 30px;
+    padding: 50px 10px 10px 10px;
+    color: black;
+}
+
+.reclama {
+    /*display: grid;*/
+    /*align-items: start;*/
+    justify-content: center;
+}
+
+.Inforeclfma {
+    margin: 40px;
+    max-width: 384px;
+    text-align: center;
+}
+
+.Inforeclfma a {
+    font-size: 15px;
+}
+
+.Inforeclfma img {
+    width: 384px;
+}
+
+#podchrkinreclama {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.InfoNaychka {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.InfoNaychkas {
+    display: grid;
+    width: 500px;
+    height: 1000px;
+    text-align: center;
+    margin: 40px 10px 10px 40px;
+    padding: 20px;
+    border: 1px solid gray;
+    border-radius: 15px;
+    background-image: url("../images/naychkabackground.png");
+    background-size: 100%;
+    background-repeat: repeat;
+}
+
+.InfoNaychkas-image {
+    transition: all .3s;
+    padding: 10px;
+    width: auto;
+    height: auto;
+}
+
+.InfoNaychkas-image img {
+    max-width: 400px;
+    height: 100%;
+    max-height: 400px;
+}
+
+#annotation {
+    font-size: larger;
+}
+
+.ButtonVigoranie {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.ButtonVigoranies {
+    max-width: 384px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.InfoNaychkasVig {
+    display: grid;
+    width: 400px;
+    height: 320px;
+    text-align: center;
+    margin: 40px 10px 10px 40px;
+    padding: 20px;
+    border: 1px solid gray;
+    border-radius: 15px;
+    background-image: url("../images/metodbackground.jpg");
+    background-size: cover;
+}
+
+.InfoVig {
+    margin-top: 40px;
+    font-size: 25px;
+    color: #525254;
+    line-height: 150%;
+}
+
+.podchrkVig {
+    font-weight: bold;
+    font-size: 30px;
+    padding: 50px 10px 10px 0;
+    color: black;
+}
+
+.quote {
+    margin: 70px;
+    padding: 30px;
+    text-indent: 40px;
+    background: rgba(136, 0, 255, 0.2);
+    font-size: 20px;
+    border-radius: 30px;
+}
+
+.InfoOsobennosti {
+    margin: 20px;
+    font-size: 25px;
+    color: #5D5D5F;
+    line-height: 150%;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+}
+
+.lesson-items-skills {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lesson-item-skills {
+    max-width: 384px;
+    height: 600px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.lesson-item-info-skills {
+    margin-top: 5px;
+    height: 220px;
+    align-items: center;
+    justify-content: center;
+}
+
+.InfoCom {
+    margin: 40px;
+    font-size: 25px;
+    color: #5D5D5F;
+    line-height: 150%;
+}
+
+.video-block {
+    display: flex;
+    margin: 10px;
+}
+
+.video-block p {
+    color: brown;
+}
+
+.video-block iframe {
+    display: block;
+    margin: 0 auto;
+}
